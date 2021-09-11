@@ -18,6 +18,7 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 1. [FileIO](#fileio)
 1. [String](#string)
 1. [Vector](#vector)
+1. [Stack](#stack)
 1. [Deque](#deque)
 1. [Pair](#pair)
 1. [Map](#map)
@@ -140,6 +141,9 @@ for (auto x: v)             // Copy elements by value
 for (const auto& x : v)     // Const reference (more efficient if just reading)
 
 for (auto& x : v)           // Non const reference, for modifying
+
+vector<int> nums;
+for (int n:nums) cout << n; // Can go straight to member
 
 do a; while (x);            // Equivalent to: a; while(x) a;
 
@@ -479,6 +483,8 @@ Variable sized character array
 #include <string>         // Include string (std namespace)
 string s1, s2="hello";    // Create strings
 s1.size(), s2.size();     // Number of characters: 0, 5
+string sstar(5,'*');      // sstar = "*****"
+
 s1 += s2 + ' ' + "world"; // Concatenation
 s1 == "hello world"       // Comparison, also <, >, !=, etc.
 s1[0];                    // 'h'
@@ -509,6 +515,35 @@ for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
 vector<int> b(a.begin(), a.end());  // b is copy of a
 vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+```
+
+## Stack
+
+Uses vector to implement so only advantage is std::stack
+is more expressive for future maintainers
+
+```cpp
+#include <stack>
+stack<int> stack;
+stack.push(21);
+stack.push(22);
+while (!stack.empty()) {
+  cout << ' ' << stack.top();
+  stack.pop();
+}
+```
+
+Equivalent Vector
+
+```cpp
+#include <vector>
+vector<int> stack;
+stack.push_back(21);
+stack.push_back(22);
+while (!stack.empty()) {
+  cout << ' ' << stack.back();
+  stack.pop_back();
+}
 ```
 
 ## Deque
