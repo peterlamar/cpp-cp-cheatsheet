@@ -628,6 +628,7 @@ reverse(a.begin(), a.end()); // Reverse vector or deque
 minmax((a.begin(), a.end())); // returns std::pair(*first, *second)
 double max = *max_element(vector.begin(), vector.end()); // Returns iterator to max
 double min = *min_element(vector.begin(), vector.end()); // Returns iterator to min
+auto pair = mismatch(a.begin(), a.end(), b.begin()); // return first mismatch pair a != b access by *pair.first 
 ```
 
 ## Chrono
