@@ -1,3 +1,7 @@
+/*
+For inputArray = [5, 3, 6, 7, 9], the output should be
+avoidObstacles(inputArray) = 4.
+*/
 int avoidObstacles(vector<int> inputArray) {
         
     int jump = 1;
