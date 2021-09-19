@@ -154,7 +154,6 @@ switch (x) {                // x must be int
 }
 break;                      // Jump out of while, do, or for loop, or switch
 continue;                   // Jump to bottom of while, do, or for loop
-return x;                   // Return x from function to caller
 try { a; }
 catch (T t) { b; }          // If a throws a T, then jump here
 catch (...) { c; }          // If a throws something else, jump here
@@ -629,6 +628,7 @@ minmax((a.begin(), a.end())); // returns std::pair(*first, *second)
 double max = *max_element(vector.begin(), vector.end()); // Returns iterator to max
 double min = *min_element(vector.begin(), vector.end()); // Returns iterator to min
 auto pair = mismatch(a.begin(), a.end(), b.begin()); // return first mismatch pair a != b access by *pair.first 
+next_permutation(a.begin(), a.end()) // Permutes the range [first, last) into the next permutation, ordered lexicographically with respect to operator< or comp
 ```
 
 ## Chrono
