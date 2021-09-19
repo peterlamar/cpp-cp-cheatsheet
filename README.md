@@ -3,6 +3,7 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 
 1. [Preprocessor](#preprocessor)
 1. [Literals](#literals)
+1. [Constants](#constants)
 1. [Declarations](#declarations)
 1. [Storage Classes](#storage-classes)
 1. [Statements](#statements)
@@ -22,9 +23,9 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 1. [Deque](#deque)
 1. [Pair](#pair)
 1. [Map](#map)
-1. [Unordered map](#Unordered-map)
-1. [Set](#Set)
-1. [Unordered set](#Unordered-set)
+1. [Unordered map](#unordered-map)
+1. [Set](#set)
+1. [Unordered set](#unordered-set)
 1. [Algorithm](#algorithm)
 1. [Chrono](#chrono)
 1. [Thread](#thread)
@@ -59,6 +60,19 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 "hello" "world"             // Concatenated strings
 true, false                 // bool constants 1 and 0
 nullptr                     // Pointer type with the address of 0
+```
+
+## Constants
+
+Microsoft [Limits](https://docs.microsoft.com/en-us/cpp/c-language/cpp-integer-limits?view=msvc-160)
+
+```cpp
+INT_MIN                     // -2147483647 - 1
+INT_MAX                     // 2147483647
+UINT_MAX                    // 4294967295 (0xffffffff)
+LLONG_MIN                   // -9,223,372,036,854,775,807 - 1
+LLONG_MAX                   // 9,223,372,036,854,775,807
+ULLONG_MAX                  // 	18,446,744,073,709,551,615 (0xffffffffffffffff)
 ```
 
 ## Declarations
@@ -491,6 +505,9 @@ s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
 s1 = to_string(12.05);    // Converts number to string
 getline(cin, s);          // Read line ending in '\n'
+isdigit('1')              // true if decimal digit
+isalnum('1')              // true if decimal digit or letter
+isalpha('1')              // true if letter
 ```
 
 ## Vector
@@ -596,6 +613,14 @@ store unique elements - usually implemented as binary search trees - avg. time c
 ```cpp
 #include <set>            // Include set (std namespace)
 set<int> s;               // Set of integers
+int mi[]= {1,2,3};
+set<int> s1 (mi,mi+5);    // range
+set<int> s2 (s1);         // a copy of s1
+set<int> s3 (s1.begin(), s1.end());   // iterator ctor.
+string str("meh");
+set<char> s4 (str.begin(), str.end());// iterator ctor.
+set<int,classcomp> s5; // class as Compare
+
 s.insert(123);            // Add element to set
 if (s.find(123) != s.end()) // Search for an element
     s.erase(123);
