@@ -13,6 +13,7 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 1. [Templates](#templates)
 1. [Namespaces](#namespaces)
 1. [Dynamic memory management](#dynamic-memory-management)
+1. [Math](#math)
 1. [Floating point math](#floating-point-math)
 1. [Debugging aid](#debugging-aid)
 1. [Input output iostream](#input-output-iostream)
@@ -433,7 +434,14 @@ if (z == nullptr){
 cout << *q;
 shared_ptr<B> r;
 r = dynamic_pointer_cast<B>(t); // Converts t to a shared_ptr<B>
+```
 
+## Math
+`stdlib.h`
+
+```cpp
+#include <stdlib.h>
+auto [q, r] = std::div(divisor, dividend); // Division with remainder
 ```
 
 ## Floating point math 
@@ -503,6 +511,7 @@ s1 == "hello world"       // Comparison, also <, >, !=, etc.
 s1[0];                    // 'h'
 s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
+s1.find_first_not_of("01")// Find first char that doesn't match
 s1 = to_string(12.05);    // Converts number to string
 getline(cin, s);          // Read line ending in '\n'
 isdigit('1')              // true if decimal digit
