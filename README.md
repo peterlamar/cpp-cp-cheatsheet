@@ -513,6 +513,8 @@ s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
 s1.find_first_not_of("01")// Find first char that doesn't match
 s1 = to_string(12.05);    // Converts number to string
+n1 = stoi(s1)             // Converts string to number
+n1 = '0' - '3'            // Convert char to number
 getline(cin, s);          // Read line ending in '\n'
 isdigit('1')              // true if decimal digit
 isalnum('1')              // true if decimal digit or letter
