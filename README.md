@@ -665,6 +665,9 @@ double max = *max_element(vector.begin(), vector.end()); // Returns iterator to 
 double min = *min_element(vector.begin(), vector.end()); // Returns iterator to min
 auto pair = mismatch(a.begin(), a.end(), b.begin()); // return first mismatch pair a != b access by *pair.first 
 next_permutation(a.begin(), a.end()) // Permutes the range [first, last) into the next permutation, ordered lexicographically with respect to operator< or comp
+is_sorted(a.begin(), a.end()) // True if sorted
+int hm[26] = {};
+is_sorted(rbegin(hm), rend(hm)) // True if reverse sorted
 ```
 
 ## Chrono

@@ -20,3 +20,19 @@ int digitDegree(int n) {
 
     return rtn;
 }
+
+int digitDegree(int n) {
+    int rtn = 0;
+    
+    while (n >= 10){
+        int tot=0;
+        while (n){
+            tot += n%10;
+            n /= 10;
+        }
+        rtn += 1;
+        n = tot;
+    }
+
+    return rtn;
+}
