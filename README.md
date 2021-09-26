@@ -505,6 +505,7 @@ Variable sized character array
 string s1, s2="hello";    // Create strings
 s1.size(), s2.size();     // Number of characters: 0, 5
 string sstar(5,'*');      // sstar = "*****"
+string(1, c)              // String with single char
 
 s1 += s2 + ' ' + "world"; // Concatenation
 s1 == "hello world"       // Comparison, also <, >, !=, etc.
@@ -669,6 +670,7 @@ next_permutation(a.begin(), a.end()) // Permutes the range [first, last) into th
 is_sorted(a.begin(), a.end()) // True if sorted
 int hm[26] = {};
 is_sorted(rbegin(hm), rend(hm)) // True if reverse sorted
+count(a.begin(), a.end(), 5)    // return number of 5 instances in array 
 ```
 
 ## Chrono
