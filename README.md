@@ -8,6 +8,7 @@ The goal is to give a concise overview of basic, modern C++ (C++14).
 1. [Storage Classes](#storage-classes)
 1. [Statements](#statements)
 1. [Functions](#functions)
+1. [Lambda](#lambda)
 1. [Expressions](#expressions)
 1. [Classes](#classes)
 1. [Templates](#templates)
